@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = chromium
+
+[Action]
+Description = Reapplying ' + c -> ç patch to the Chromium binary...
+When = PostTransaction
+Exec = /usr/bin/python3 /usr/local/bin/chromium-cedilla-patch.py /usr/lib/chromium/chromium
